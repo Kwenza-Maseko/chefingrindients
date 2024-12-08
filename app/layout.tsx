@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import localFont from "next/font/local"; import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,12 +20,40 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider
+      appearance={{
+        layout: {
+          logoImageUrl: '/chefLogo.png'
+        },
+        elements: {
+          logoBox: {
+            width: '120px',
+            height: '120px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: '0 auto',
+          }
+        },
+        variables: {
+          colorPrimary: '#0d213d',
+          colorBackground: '#17021b',
+          colorText: '#f7f7f7',
+          colorInputBackground: '#290731',
+          colorInputText: '#f7f7f7',
+
+        },
+      }
+      }>
+      <html lang="en">
+        <body
+          className={`antialiased`}
+        >
+          <div className="">
+            {children}
+          </div>
+        </body>
+      </html>
+    </ClerkProvider >
   );
 }

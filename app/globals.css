@@ -1,21 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Didact Gothic", sans-serif;
+  background: linear-gradient(120deg, #290731, #010e27, #0d213d);
+  background-size: 200% 200%;
+  color: #ffffffe1;
+  letter-spacing: 0.5px;
+  font-size: 11pt;
+}
+
+.box-background{
+  background: #0d213d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.363);
+}
+.pacifico-regular {
+  font-family: "Pacifico";
+  letter-spacing: 1px;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 5px; /* Scrollbar width */
+  height: 5px; /* Horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #10233b; 
+  border-radius: 5px; /* Rounded scrollbar edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #525252; /* Changes color on hover */
+}
+
+::-webkit-scrollbar-track {
+  margin-right: 20px;
+  background-color: rgba(255, 255, 255, 0); /* Fully transparent background for the track */
+  border-radius: 5px; /* Rounded edges for a smooth appearance */
+  border: none; /* Ensure no borders obscure transparency */
+}
+
+.filter_container{
+  position: relative;
+}
+
+.filter_container::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  background-image: linear-gradient(to top, #010e279d , transparent);
 }
