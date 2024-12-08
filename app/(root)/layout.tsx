@@ -1,4 +1,3 @@
-import Chef from "@/components/Chef";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
