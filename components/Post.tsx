@@ -5,7 +5,6 @@ import {
     Timer,
     Heart,
     SaveIcon,
-    SendIcon
 } from "lucide-react"
 
 const Post = () => {
